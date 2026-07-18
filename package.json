@@ -3,6 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Premium portfolio site for Piyush Kumar Singh — AI Engineer. Built with React, TypeScript, Tailwind CSS, and Framer Motion.",
+  "author": "Piyush Kumar Singh",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
