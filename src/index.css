@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 124, 255, 0.14), transparent),
+      linear-gradient(to right, #ffffff08 1px, transparent 1px),
+      linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+    background-size: 100% 100%, 44px 44px, 44px 44px;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: #8B7CFF;
+    color: #0A0A0E;
+  }
+
+  :focus-visible {
+    outline: 2px solid #8B7CFF;
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #26262F;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #34343F;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[12px] tracking-[0.18em] uppercase text-accent-bright;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl font-semibold tracking-tight text-ink;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-body text-[15px] font-medium text-bg
+      transition-all duration-200 hover:bg-accent-bright hover:-translate-y-0.5 active:translate-y-0
+      focus-visible:outline-2 focus-visible:outline-accent;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-border-strong bg-surface px-5 py-3 font-body text-[15px] font-medium text-ink
+      transition-all duration-200 hover:border-accent/60 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .chip {
+    @apply rounded-full border border-border-strong bg-surface-2 px-2.5 py-1 font-mono text-[11px] tracking-wide text-ink-muted;
+  }
+
+  .card {
+    @apply rounded-xl border border-border bg-surface;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
